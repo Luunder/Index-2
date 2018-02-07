@@ -1,0 +1,37 @@
+Sub quitter_excel()
+
+'Déclaration des variables
+Dim OuiNon As Integer
+
+'Attribution d'une valeur à OUINON en fonction de la réponse
+OuiNon = MsgBox("Voulez vous vraiment quitter Excel ?", vbYesNo + vbQuestion + vbDefaultButton1, "Au revoir")
+
+'Structure alternative
+    If OuiNon = vbYes Then
+        MsgBox ("A bientôt...")
+        Else
+        MsgBox ("On reste...")
+    End If
+
+End Sub
+
+Sub quitter_excel2()
+
+'Déclaration des variables
+Dim OuiNon As Integer
+
+'Attribution d'une valeur à OUINON en fonction de la réponse
+OuiNon = MsgBox("Voulez vous vraiment quitter Excel ?", vbYesNo + vbQuestion + vbDefaultButton1, "Au revoir")
+
+'Structure alternative
+    If OuiNon = vbYes Then
+        MsgBox ("A bientôt...")
+        Else
+        MsgBox ("On reste...")
+    End If
+'Selection de la feuille 1
+    Sheets("Feuil1").Select
+'Récupération de la valeur de la variable
+    Range("A1").Value = OuiNon
+
+End Sub
