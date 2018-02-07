@@ -1,0 +1,29 @@
+'Début de la procédure
+Sub Selon_cas()
+
+'Déclaration des varaibles
+Dim Rep As Variant
+Dim Ans As Variant
+'Récupération de la valeur saisie
+Rep = InputBox("Combien d'heures avez-vous dromi cette nuit ? ", "Sommeil")
+    
+    'Structure alternative
+    Select Case Rep
+        Case Is = ""
+            Exit Sub
+        Case Is <= 5
+            Ans = MsgBox("Rattraper ce manque au plus vite ...", vbYesonly + vbCritical, "Réponse du docteur Berty")
+        Case Is <= 8
+            Ans = MsgBox("Vous ne dormez peut-être pas assez ...", vbYesonly + vbCritical, "Réponse du docteur Berty")
+        Case Is <= 10
+            Ans = MsgBox("Vous devez être en pleine forme ! ", vbYesonly + vbCritical, "Réponse du docteur Berty")
+        Case Is <= 24
+            Ans = MsgBox("Ne seriez-vous pas ascendant marmotte ?", vbYesonly + vbCritical, "Réponse du docteur Berty")
+        Case Else
+            Ans = MsgBox("Saisir un chiffre compris entre 0 et 24", vbYesonly + vbCritical, "Réponse du docteur Berty")
+    'Relancer la procédure selon_cas
+    Call Selon_cas
+    'Fin de la structure alternative
+    End Select
+'Fin de la procédure
+End Sub
