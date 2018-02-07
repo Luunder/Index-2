@@ -1,0 +1,32 @@
+
+Sub si_alors_sinon1()
+'Déclaration des variables
+    Dim Nb1 As Integer
+    Dim Nb2 As Integer
+    Dim Res As Integer
+'Affectation de la vameur saisie à Nb1
+    Nb1 = InputBox("Entrez le premier nombre : ")
+'Affectation de la valeur saisie à Nb2
+    Nb2 = InputBox("Entrez le deuxième nombre : ")
+     'Début de la structure alternative  où l'on compare les deux variables
+        If Nb1 > Nb2 Then
+    'Affectation de la différence dans la variable RES
+        Res = Nb1 - Nb2
+        Else
+        Res = Nb2 - Nb1
+    'Fin de l'alternative
+    End If
+'Affichage du régulier
+MsgBox ("La valeur absolue de la différence est : " & Res)
+'Selection de la feuille 2
+Sheets("Feuil2").Select
+    'Creation des en-tête
+    Range("A1").Value = "NB1"
+    Range("Bl").Value = "NB2"
+    Range("C1").Value = "Résultat"
+    'Récupération des varaibles
+    Range("A2").Value = Nb1
+    Range("B2").Value = Nb2
+    Range("C2").Value = Res
+    
+End Sub
