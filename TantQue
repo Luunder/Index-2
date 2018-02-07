@@ -1,0 +1,39 @@
+
+'Début de la procédure
+Sub tant_que()
+
+'Déclaration des variables
+Dim Nom As Variant
+Dim Cpt As Variant
+Dim Ligne As Integer
+    'Initialisation de la variable
+    Ligne = 2
+    
+    'Selection de la feuille 3
+    Sheets("Feuil3").Select
+    
+    'Saisi et différenciation de la variable Nom
+    Nom = InputBox("Entrez un nom (ou stop pour arrêt) : ")
+        'Boucle tant que
+        While Nom <> "stop"
+        'Message
+        MsgBox ("Le nom aussi est : " & Nom)
+        'Incrémentation de la variable Cpt
+        Cpt = Cpt + 1
+        'Recherche de l'emplacement disponible
+        While Range("A" & Ligne).Value <> ""
+            Ligne = Ligne + 1
+        Wend
+        'Récupération de la vraible
+         Range("A" & Ligne).Value = Nom
+        'Saisi d'un autre nom
+        Nom = InputBox("Entrez un nom(ou stop pour arrêt) : ")
+        'Fin de la boucle
+        Wend
+    'Affichage
+    MsgBox ("Nombre de passage : " & Cpt)
+    MsgBox ("Saisie terminée")
+
+
+'Fin de la procédure
+End Sub
