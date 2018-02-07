@@ -1,0 +1,18 @@
+'Structure
+Sub Vidange1()
+'Déclaration des variables
+Dim OuiNon As Integer
+    'Selection de la feuille
+    Sheets("Pour").Value
+        'Attribution d'une valeur à OUINON en fonction de la réponse
+        OuiNon = MsgBox("Voulez vous vraiment effacerla feuille ?", vbYesNo + vbQuestion + vbDefaultButton1, "Au revoir")
+            'Structure alternative
+            If OuiNon = vbYes Then
+            Cells.Select
+            Selection.Delete Shift:=xlUp
+            Cells.Select
+            Else
+            MsgBox ("Très bien !")
+            End If
+
+End Sub
