@@ -1,0 +1,218 @@
+'Structure Pour
+Sub Pour1()
+'Déclaration des variables
+Dim Nb1 As Single
+Dim Nb2 As Single
+Dim i As Integer
+    'Determination du nombre de passage dans la boucle
+    For i = 1 To 3
+        'Affectation de la première saisie à varaible Nb1
+        Nb1 = InputBox("Entrez la premier nombre !")
+        
+        'Affectation de la deuxième saisie à la variable Nb2
+        Nb2 = InputBox("Entrez le deuxième nombre !")
+        
+            'Condition permettant de comparer les valeurs saisies
+            If Nb1 < Nb2 Then
+                'Affichage du plus petit des deux
+                MsgBox ("Le plus petit des deux est : " & Nb1)
+                Else
+                MsgBox ("Le plus petit des deux est : " & Nb2)
+            'Fin de la condition
+            End If
+    'Fin de la boucle
+    Next i
+MsgBox ("Nombre de passage : " & i - 1)
+MsgBox ("C'est fini boufi !")
+End Sub
+
+
+'Structure Pour
+Sub Pour2()
+'Déclaration des variables
+Dim Nb1 As Single
+Dim Nb2 As Single
+Dim i As Integer
+Dim NbrTour As Integer
+'Choix du nombre de saisie par l'utilisateur
+    NbrTour = InputBox("Choisissez le nombre de saisie !")
+    'Determination du nombre de passage dans la boucle
+    For i = 1 To NbrTour
+        'Affectation de la première saisie à varaible Nb1
+        Nb1 = InputBox("Entrez la premier nombre !")
+        
+        'Affectation de la deuxième saisie à la variable Nb2
+        Nb2 = InputBox("Entrez le deuxième nombre !")
+        
+            'Condition permettant de comparer les valeurs saisies
+            If Nb1 < Nb2 Then
+                'Affichage du plus petit des deux
+                MsgBox ("Le plus petit des deux est : " & Nb1)
+                Else
+                MsgBox ("Le plus petit des deux est : " & Nb2)
+            'Fin de la condition
+            End If
+    'Fin de la boucle
+    Next i
+MsgBox ("Nombre de passage : " & i - 1)
+MsgBox ("C'est fini boufi !")
+End Sub
+
+'Structure Pour
+Sub Pour3()
+'Déclaration des variables
+Dim Nb1 As Single
+Dim Nb2 As Single
+Dim i As Integer
+Dim NbrTour As Variant
+'Choix du nombre de saisie par l'utilisateur
+    NbrTour = InputBox("Choisissez le nombre de saisie !")
+    'Test du contenu de NbrTour
+    If (NbrTour = 0 Or NbrTour = "") Then
+    Exit Sub
+    End If
+
+    'Determination du nombre de passage dans la boucle
+    For i = 1 To NbrTour
+        'Affectation de la première saisie à varaible Nb1
+        Nb1 = InputBox("Entrez la premier nombre !")
+        
+        'Affectation de la deuxième saisie à la variable Nb2
+        Nb2 = InputBox("Entrez le deuxième nombre !")
+        
+            'Condition permettant de comparer les valeurs saisies
+            If Nb1 < Nb2 Then
+                'Affichage du plus petit des deux
+                MsgBox ("Le plus petit des deux est : " & Nb1)
+                Else
+                MsgBox ("Le plus petit des deux est : " & Nb2)
+            'Fin de la condition
+            End If
+    'Fin de la boucle
+    Next i
+MsgBox ("Nombre de passage : " & i - 1)
+MsgBox ("C'est fini boufi !")
+End Sub
+
+'Structure Pour
+Sub Pour4()
+'Déclaration des variables
+Dim Nb1 As Single
+Dim Nb2 As Single
+Dim i As Integer
+Dim NbrTour As Variant
+Dim Ligne As Integer
+Dim Petit As Single
+'Initialisation de la variable Ligne
+Ligne = 2
+'Selection de la feuille Pour
+Sheets("Pour").Select
+'Ecriture des entêtes
+Range("A1").Value = "Nb1"
+Range("B1").Value = "Nb2"
+Range("C1").Value = "Le plus petit"
+'Choix du nombre de saisie par l'utilisateur
+    NbrTour = InputBox("Choisissez le nombre de saisie !")
+    'Test du contenu de NbrTour
+    If (NbrTour = 0 Or NbrTour = "") Then
+    Exit Sub
+    End If
+
+    'Determination du nombre de passage dans la boucle
+    For i = 1 To NbrTour
+        'Affectation de la première saisie à varaible Nb1
+        Nb1 = InputBox("Entrez la premier nombre !")
+        
+        'Affectation de la deuxième saisie à la variable Nb2
+        Nb2 = InputBox("Entrez le deuxième nombre !")
+        
+            'Condition permettant de comparer les valeurs saisies
+            If Nb1 < Nb2 Then
+                'Affichage du plus petit des deux
+                MsgBox ("Le plus petit des deux est : " & Nb1)
+                Petit = Nb1
+                Else
+                MsgBox ("Le plus petit des deux est : " & Nb2)
+                Petit = Nb2
+            'Fin de la condition
+            End If
+            'Recherche de l'endroit disponible
+            While Range("A" & Ligne).Value <> ""
+                Ligne = Ligne + 1
+            Wend
+            Range("A" & Ligne).Value = Nb1
+            Range("B" & Ligne).Value = Nb2
+            Range("C" & Ligne).Value = Petit
+'Choix du nombre de saisie par l'utili
+    'Fin de la boucle
+    Next i
+MsgBox ("Nombre de passage : " & i - 1)
+MsgBox ("C'est fini boufi !")
+End Sub
+
+'Structure Pour
+Sub Pour5()
+'Déclaration des variables
+Dim Nb1 As Single
+Dim Nb2 As Single
+Dim i As Integer
+Dim NbrTour As Variant
+Dim Ligne As Integer
+Dim Petit As Single
+Dim OuiNon As Integer
+'Initialisation de la variable Ligne
+Ligne = 2
+'Selection de la feuille Pour
+Sheets("Pour").Select
+'Ecriture des entêtes
+Range("A1").Value = "Nb1"
+Range("B1").Value = "Nb2"
+Range("C1").Value = "Le plus petit"
+'Choix du nombre de saisie par l'utilisateur
+    NbrTour = InputBox("Choisissez le nombre de saisie !")
+    'Test du contenu de NbrTour
+    If (NbrTour = 0 Or NbrTour = "") Then
+    Exit Sub
+    End If
+
+    'Determination du nombre de passage dans la boucle
+    For i = 1 To NbrTour
+        'Affectation de la première saisie à varaible Nb1
+        Nb1 = InputBox("Entrez la premier nombre !")
+        
+        'Affectation de la deuxième saisie à la variable Nb2
+        Nb2 = InputBox("Entrez le deuxième nombre !")
+        
+            'Condition permettant de comparer les valeurs saisies
+            If Nb1 < Nb2 Then
+                'Affichage du plus petit des deux
+                MsgBox ("Le plus petit des deux est : " & Nb1)
+                Petit = Nb1
+                Else
+                MsgBox ("Le plus petit des deux est : " & Nb2)
+                Petit = Nb2
+            'Fin de la condition
+            End If
+            'Recherche de l'endroit disponible
+            While Range("A" & Ligne).Value <> ""
+                Ligne = Ligne + 1
+            Wend
+            Range("A" & Ligne).Value = Nb1
+            Range("B" & Ligne).Value = Nb2
+            Range("C" & Ligne).Value = Petit
+'Choix du nombre de saisie par l'utilisateur
+    'Fin de la boucle
+    Next i
+MsgBox ("Nombre de passage : " & i - 1)
+    'Attribution d'une valeur à OUINON en fonction de la réponse
+    OuiNon = MsgBox("Voulez vous effacer la feuille ?", vbYesNo + vbQuestion + vbDefaultButton1, "Au revoir")
+            'Structure alternative
+            If OuiNon = vbYes Then
+            Cells.Select
+            Selection.Delete Shift:=xlUp
+            Cells.Select
+            Else
+            MsgBox ("Très bien !")
+            End If
+MsgBox ("C'est fini boufi !")
+End Sub
